@@ -161,7 +161,7 @@
             <div class="rhombus"></div>
             <div class="rhombus"></div>
             <div class="rhombus-img">
-                <img id="img-cua-em" src="image/truongan.jpg" alt="">
+                <img id="img-cua-em" src="https://mimosawedding.net/wp-content/uploads/2020/03/hoc-chup-anh-o-dau-ha-noi-3.jpg" alt="">
             </div>
             <div class="mail">
                 <button><i class="fa-regular fa-envelope"></i></button>
@@ -213,9 +213,10 @@
                             <h1 id="name-cua-em">&#129505Gửi em !</h1>
                         </div>
                         <p id="message-content">
+                            Chúc em luôn vui vẻ, hạnh phúc, thành công trong công việc và cuộc sống.
                         </p>
                         <div class="fixedContent">
-                            <h3>Người gửi: Đinh Văn Thức</h3>
+                            <h3>Người gửi: Bé Công</h3>
                         </div>
                     </div>
                 </div>
@@ -235,12 +236,14 @@
     var urlParams = new URLSearchParams(window.location.search);
     var name = urlParams.get('name');
     // search name in data_name
-    for (var i = 0; i < data_name.length; i++) {
-        if (data_name[i].ma_ten == name) {
-            document.getElementById("message-content").innerHTML += data_name[i].message;
-            document.getElementById("name-cua-em").innerHTML = `&#129505Gửi ${data_name[i].name}!`;
-            document.getElementById("img-cua-em").src = data_name[i].img;
-            break;
+    if (name != null) {
+        for (var i = 0; i < data_name.length; i++) {
+            if (name == data_name[i].name) {
+                document.getElementById("name-cua-em").innerHTML = data_name[i].name;
+                document.getElementById("img-cua-em").src = data_name[i].img;
+                document.getElementById("message-content").innerHTML = data_name[i].message;
+                break;
+            }
         }
     }
 
